@@ -1,14 +1,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "gelatinasLolita",
+  "name": "gelatinas-lolita",
   "compatibility_date": "2026-06-15",
   "assets": {
     "directory": "./dist"
-  },
-  // "kv_namespaces": [
-  //   {
-  //     "binding": "SESSION",
-  //     "id": ""
-  //   }
-  // ]
+  }
 }
