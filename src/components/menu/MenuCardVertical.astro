@@ -1,0 +1,39 @@
+---
+interface Props {
+  image: string;
+  name: string;
+  price: string;
+  description: string;
+  category: string;
+  aspectRatio?: "square" | "landscape";
+}
+
+const { image, name, price, description, category, aspectRatio = "square" } = Astro.props;
+
+const imageContainerClass = aspectRatio === "square" ? "aspect-square" : "h-64";
+const altText = `${name} - ${category}`;
+---
+
+<article class="group">
+  <!-- Image container -->
+  <div class={`${imageContainerClass} overflow-hidden bg-white soft-card-shadow`}>
+    <img
+      src={image}
+      alt={altText}
+      width="400"
+      height={aspectRatio === "square" ? "400" : "256"}
+      loading="lazy"
+      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+  </div>
+
+  <!-- Name + Price with dotted leader -->
+  <div class="flex items-baseline gap-2 mt-4 mb-2">
+    <h3 class="font-body font-semibold text-on-surface text-base whitespace-nowrap">{name}</h3>
+    <span class="flex-1 border-b border-dotted border-outline-variant" aria-hidden="true"></span>
+    <span class="font-body font-semibold text-secondary text-base whitespace-nowrap">{price}</span>
+  </div>
+
+  <!-- Description -->
+  <p class="text-on-surface-variant text-sm leading-5 italic">{description}</p>
+</article>

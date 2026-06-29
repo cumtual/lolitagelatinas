@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+
+---
+
+<header
+  id="header"
+  class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300"
+>
+  <nav
+    aria-label="Navegación principal"
+    class="max-w-[var(--container-max)] mx-auto px-margin-mobile md:px-margin-desktop py-3 flex items-center justify-between"
+  >
+    <!-- Logo -->
+    <a href="/">
+      <Image
+        src="/favicon.svg"
+        alt="Gelatinas Lolita"
+        class="h-10 md:h-12"
+        width="48"
+        height="48"
+      />
+    </a>
+
+    <!-- CTA Button -->
+    <a
+      href="tel:+529535320959"
+      class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-body font-semibold text-sm hover:opacity-90 transition-opacity"
+    >
+      Ordena ahora
+    </a>
+  </nav>
+</header>
+
+<script>
+  const header = document.getElementById('header');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header?.classList.add('shadow-md', 'bg-surface/95');
+      header?.classList.remove('bg-surface/90');
+    } else {
+      header?.classList.remove('shadow-md', 'bg-surface/95');
+      header?.classList.add('bg-surface/90');
+    }
+  });
+</script>

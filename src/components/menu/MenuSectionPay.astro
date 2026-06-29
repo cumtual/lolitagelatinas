@@ -1,0 +1,23 @@
+---
+import { getItemsByCategory } from '../../data/menu';
+import MenuCardFeatured from './MenuCardFeatured.astro';
+import MenuSidebarPay from './MenuSidebarPay.astro';
+
+const payItems = getItemsByCategory("Pay de Queso");
+---
+
+<section id="pay-de-queso" class="scroll-mt-[100px] mb-16">
+  <!-- Título con línea decorativa -->
+  <div class="flex items-center gap-4">
+    <h2 class="font-display text-2xl font-bold text-primary whitespace-nowrap">Pay de Queso</h2>
+    <div class="flex-1 h-px bg-outline-variant/30" aria-hidden="true"></div>
+  </div>
+
+  <!-- Grid: Featured (2 cols) + Sidebar (1 col) -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-8">
+    <MenuCardFeatured {...payItems[0]} badge="Receta Secreta" />
+    <div class="flex items-center">
+      <MenuSidebarPay />
+    </div>
+  </div>
+</section>

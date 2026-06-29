@@ -1,0 +1,20 @@
+---
+const categories = [
+  { label: "Gelatinas", anchor: "#gelatinas" },
+  { label: "Flanes", anchor: "#flanes" },
+  { label: "Carlotas", anchor: "#carlotas" },
+  { label: "Cremitas", anchor: "#cremitas" },
+  { label: "Pay de Queso", anchor: "#pay-de-queso" },
+];
+---
+
+<nav aria-label="Navegación por categorías" class="flex flex-wrap justify-center gap-3 mb-12">
+  {categories.map((cat) => (
+    <a
+      href={cat.anchor}
+      class="rounded-full bg-secondary/10 text-secondary border border-secondary/20 px-5 py-2 text-sm font-semibold hover:bg-secondary hover:text-white transition-colors duration-200"
+    >
+      {cat.label}
+    </a>
+  ))}
+</nav>

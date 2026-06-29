@@ -1,0 +1,49 @@
+---
+interface Props {
+  image: string;
+  name: string;
+  price: string;
+  description: string;
+  category: string;
+}
+
+const { image, name, price, description, category } = Astro.props;
+
+const altText = `${name} - ${category}`;
+---
+
+<article class="flex flex-col md:flex-row gap-6 p-4 bg-white/50 border border-outline-variant/5">
+  <!-- Image container: full width mobile, w-48 desktop -->
+  <div class="w-full md:w-48 aspect-square overflow-hidden shrink-0">
+    <img
+      src={image}
+      alt={altText}
+      width="192"
+      height="192"
+      loading="lazy"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Info section -->
+  <div class="flex flex-col justify-center">
+    <!-- Name + Price with dotted leader -->
+    <div class="flex items-baseline gap-2 mb-2">
+      <h3 class="font-body font-semibold text-on-surface text-base whitespace-nowrap">{name}</h3>
+      <span class="flex-1 border-b border-dotted border-outline-variant" aria-hidden="true"></span>
+      <span class="font-body font-semibold text-secondary text-base whitespace-nowrap">{price}</span>
+    </div>
+
+    <!-- Description -->
+    <p class="text-on-surface-variant text-sm leading-5 italic mb-4">{description}</p>
+
+    <!-- Ver Detalles button -->
+    <!-- <button
+      class="flex items-center gap-1 text-secondary uppercase tracking-widest text-[12px] hover:translate-x-2 transition-transform duration-300"
+      type="button"
+    >
+      Ver Detalles
+      <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+    </button> -->
+  </div>
+</article>

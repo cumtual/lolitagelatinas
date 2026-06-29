@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+const currentYear = new Date().getFullYear();
+---
+
+<footer aria-label="Pie de página" class="bg-surface-container-low border-t border-outline-variant/10 py-12 md:py-16">
+  <div class="max-w-[var(--container-max)] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <!-- Logo + Description -->
+      <div class="flex flex-col gap-4">
+        <Image
+          src="/LogoGelatinasLolita.png"
+          alt="Gelatinas Lolita"
+          class="h-10 w-auto self-start"
+          loading="lazy"
+          width="40"
+          height="40"
+        />
+        <p class="text-on-surface-variant text-sm leading-6 max-w-xs">
+          Postres artesanales de Huajuapan de León, Oaxaca. Tradición familiar desde 1974.
+        </p>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav aria-label="Enlaces de navegación">
+        <h3 class="font-body font-semibold text-on-surface text-sm mb-4">Navegación</h3>
+        <ul class="flex flex-col gap-3">
+          <li>
+            <a href="#hero" class="text-on-surface-variant text-sm hover:text-secondary transition-colors">Inicio</a>
+          </li>
+          <li>
+            <a href="#postres" class="text-on-surface-variant text-sm hover:text-secondary transition-colors">Nuestros Postres</a>
+          </li>
+          <li>
+            <a href="#identidad" class="text-on-surface-variant text-sm hover:text-secondary transition-colors">Identidad Local</a>
+          </li>
+          <li>
+            <a href="#eventos" class="text-on-surface-variant text-sm hover:text-secondary transition-colors">Eventos</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Copyright -->
+      <div class="flex flex-col justify-end">
+        <p class="text-on-surface-variant text-xs">
+          &copy; {currentYear} Gelatinas Lolita. Desarrollado por <a href="https://cumtual.com" target="_blank" rel="noopener noreferrer" class="hover:text-secondary">Cumtual</a>
+        </p>
+        <p class="text-on-surface-variant/60 text-xs mt-2">
+          Huajuapan de León, Oaxaca, México
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

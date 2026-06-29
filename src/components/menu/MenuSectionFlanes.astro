@@ -1,0 +1,19 @@
+---
+import { getItemsByCategory } from '../../data/menu';
+import MenuCardHorizontal from './MenuCardHorizontal.astro';
+---
+
+<section id="flanes" class="scroll-mt-[100px] mb-16">
+  <!-- Título con línea decorativa -->
+  <div class="flex items-center gap-4">
+    <h2 class="font-display text-2xl font-bold text-primary whitespace-nowrap">Flanes</h2>
+    <div class="flex-1 h-px bg-outline-variant/30" aria-hidden="true"></div>
+  </div>
+
+  <!-- Grid de productos -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mt-8">
+    {getItemsByCategory("Flanes").map(item => (
+      <MenuCardHorizontal {...item} />
+    ))}
+  </div>
+</section>

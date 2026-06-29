@@ -1,0 +1,73 @@
+---
+---
+
+<section id="eventos" class="py-16 md:py-24 bg-primary">
+  <div class="max-w-[var(--container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] text-center">
+    <!-- Title -->
+    <h2 class="font-display text-inverse-primary text-3xl md:text-[32px] leading-10 mb-4">
+      Eventos y Celebraciones
+    </h2>
+
+    <!-- Subtitle -->
+    <p class="text-on-primary/80 text-lg mb-10 max-w-lg mx-auto">
+      ¿Tienes un evento especial? Solicita una cotización personalizada para tus postres favoritos.
+    </p>
+
+    <!-- Form -->
+    <form id="cotizacion-form" class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+      <input
+        type="email"
+        id="email-input"
+        name="email"
+        placeholder="tu@email.com"
+        required
+        aria-label="Correo electrónico para cotización"
+        class="w-full sm:flex-1 bg-white/10 border border-white/20 text-on-primary placeholder:text-on-primary/50 px-6 py-3 rounded-full font-body text-sm focus:outline-none focus:ring-2 focus:ring-inverse-primary/50 transition-all"
+      />
+      <button
+        type="submit"
+        class="w-full sm:w-auto bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full font-body font-semibold text-sm hover:opacity-90 transition-opacity whitespace-nowrap"
+      >
+        Solicitar Cotización
+      </button>
+    </form>
+
+    <!-- Error message (hidden by default) -->
+    <p id="email-error" class="text-error-container text-sm mt-3 hidden" aria-live="polite">
+      Por favor, ingresa un email válido.
+    </p>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('cotizacion-form') as HTMLFormElement;
+  const emailInput = document.getElementById('email-input') as HTMLInputElement;
+  const errorMsg = document.getElementById('email-error');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const email = emailInput?.value.trim();
+    const isValid = email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!isValid) {
+      emailInput?.classList.add('border-error', 'border-2');
+      emailInput?.classList.remove('border-white/20');
+      errorMsg?.classList.remove('hidden');
+    } else {
+      emailInput?.classList.remove('border-error', 'border-2');
+      emailInput?.classList.add('border-white/20');
+      errorMsg?.classList.add('hidden');
+      // Success state - could redirect or show confirmation
+      alert('¡Gracias! Nos pondremos en contacto contigo pronto.');
+      form.reset();
+    }
+  });
+
+  // Clear error on input change
+  emailInput?.addEventListener('input', () => {
+    emailInput.classList.remove('border-error', 'border-2');
+    emailInput.classList.add('border-white/20');
+    errorMsg?.classList.add('hidden');
+  });
+</script>

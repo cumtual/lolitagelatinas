@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section id="hero" class="relative overflow-hidden min-h-[80vh] flex items-center">
+  <!-- Background Image: Catedral de Huajuapan -->
+  <div class="absolute inset-0">
+    <Image src={'/catedral.png'} alt={"Catedral Haujuapan"} width={1080} height={800} class="w-full h-full object-cover opacity-15 grayscale" loading="eager" />
+  </div>
+
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent"></div>
+
+  <!-- Content Grid: 2 cols desktop, 1 col mobile -->
+  <div class="relative max-w-[var(--container-max)] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24 w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+    <!-- Text Column -->
+    <div class="flex flex-col gap-6">
+      <!-- Badge -->
+      <span class="text-secondary font-body font-semibold text-xs tracking-widest uppercase">
+        DESDE 1974
+      </span>
+      
+      <!-- Title -->
+      <h1 class="font-display text-primary text-5xl md:text-[48px] leading-[56px] font-bold tracking-tight">
+        Postres Artesanales de Huajuapan
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="text-on-surface-variant text-lg leading-7 max-w-md">
+        Gelatinas, cremitas y pays elaborados con recetas tradicionales que han deleitado a generaciones desde 1974.
+      </p>
+      
+      <!-- CTA Button -->
+      <div>
+        <a
+          href="/menu"
+          class="inline-block bg-primary text-on-primary px-8 py-3.5 rounded-full font-body font-semibold text-base shadow-lg hover:shadow-xl hover:opacity-95 transition-all"
+        >
+          Ver Menú Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Image Column: Product with Glow -->
+    <div class="flex justify-center items-center relative">
+      <!-- Animated Glow -->
+      <div class="absolute w-64 h-64 md:w-80 md:h-80 bg-secondary/20 rounded-full blur-3xl animate-pulse"></div>
+      
+      <!-- Product Image: Cremita -->
+      <!-- <img
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4pJRYkAkRZjnLnlho48ElQMCfv_y5gJsOlPP32l54P3sCdCjpEY7rqVlDBNSzHcwyJiAaZ1BpYfZ_VBlRNvVPaLO2yH3Cl-dUwYc2XDK0BXkicjNnNJQSp2NaRZR1XgjJpb7pMHZ3Vy2s5BqFyAtfBJfF0oN3v8P1f6oo0WfYQIfgDeSb7B38jNnJ1G7N4OQXOEM9t3a3sBEGJcvVLSJGiS9W2wnziqHsXqVpQVPV5iQWdXjV0xCrIXgsCeZ3zcTTt4YFqyc6s6K2U"
+        alt="Cremita artesanal de Gelatinas Lolita"
+        class="relative z-10 w-56 h-56 md:w-72 md:h-72 object-contain drop-shadow-2xl"
+        loading="eager"
+        width="288"
+        height="288"
+      /> -->
+      <Image src={'/CremitaEncabezado.png'} alt={'Imagen Cremita'} width={1080} height={1080} class="relative z-10 w-56 h-56 md:w-80 md:h-80 object-contain drop-shadow-2xl" loading={'eager'}/>
+    </div>
+  </div>
+</section>

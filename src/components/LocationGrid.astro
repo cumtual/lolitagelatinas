@@ -1,0 +1,100 @@
+---
+// LocationGrid.astro
+// Sección de ubicación con mapa de Google Maps y tarjetas de información de contacto
+---
+
+<section aria-label="Ubicación y contacto" class="py-16 md:py-24">
+  <div class="max-w-[var(--container-max)] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <!-- Mapa: lg:col-span-8 -->
+      <div class="lg:col-span-8">
+        <div class="rounded-xl overflow-hidden soft-card-shadow border border-outline-variant/20 hover:-translate-y-1 transition duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)]">
+          <iframe
+            id="map-iframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-97.7759860!3d17.8050705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ4JzE4LjMiTiA5N8KwNDYnMzMuNiJX!5e0!3m2!1ses!2smx!4v1234567890"
+            class="w-full aspect-video md:aspect-[16/9]"
+            loading="lazy"
+            title="Ubicación de Gelatinas Lolita en Huajuapan de León, Oaxaca"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <!-- Fallback: enlace alternativo a Google Maps -->
+        <div id="map-fallback" class="hidden rounded-xl overflow-hidden soft-card-shadow border border-outline-variant/20 p-8 text-center">
+          <p class="text-on-surface-variant mb-4">No se pudo cargar el mapa.</p>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=17.8050705,-97.7759860"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-secondary font-semibold hover:underline"
+          >
+            <span class="material-symbols-outlined text-xl">open_in_new</span>
+            Ver ubicación en Google Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Info: lg:col-span-4 -->
+      <div class="lg:col-span-4 flex flex-col gap-6">
+        <!-- Tarjeta Contacto -->
+        <div class="p-8 bg-surface-container-low rounded-xl border border-outline-variant/10">
+          <h2 class="font-display text-primary text-headline-md font-bold mb-6">Detalles de Contacto</h2>
+          <div class="flex flex-col gap-4">
+            <!-- Dirección -->
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-xl" aria-hidden="true">location_on</span>
+              <span class="text-on-surface-variant">Antonio de León #12, Centro, 69000</span>
+            </div>
+            <!-- WhatsApp (posicionado antes del teléfono - Req 14.4) -->
+            <!-- <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-xl" aria-hidden="true">chat</span>
+              <a
+                href="https://wa.me/529531234567"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contactar por WhatsApp"
+                class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-5 border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-white transition-colors duration-200 font-semibold"
+              >
+                Teléfono
+              </a>
+            </div> -->
+            <!-- Teléfono -->
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-xl" aria-hidden="true">call</span>
+              <a href="tel:+529535320959" class="text-on-surface-variant hover:text-secondary transition-colors">+52 953 532 0959</a>
+            </div>
+            <!-- Horario -->
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-xl" aria-hidden="true">schedule</span>
+              <span class="text-on-surface-variant">Lunes - Sábado: 9am - 9pm</span>
+            </div>
+          </div>
+        </div>
+        <!-- Tarjeta Cultural -->
+        <div class="relative bg-primary p-6 text-white rounded-xl overflow-hidden">
+          <h3 class="font-display text-headline-md font-bold text-white">Punto de Encuentro</h3>
+          <p class="italic mt-3 text-white/90 leading-relaxed">
+            Un lugar donde la tradición oaxaqueña se vive en cada postre, uniendo familias desde 1974.
+          </p>
+          <span class="material-symbols-outlined absolute bottom-2 right-2 text-8xl text-white/10 rotate-12" aria-hidden="true">restaurant</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const mapIframe = document.getElementById('map-iframe');
+  const mapFallback = document.getElementById('map-fallback');
+
+  if (mapIframe && mapFallback) {
+    const timeout = setTimeout(() => {
+      mapIframe.style.display = 'none';
+      mapFallback.classList.remove('hidden');
+    }, 10000);
+
+    mapIframe.addEventListener('load', () => {
+      clearTimeout(timeout);
+    });
+  }
+</script>

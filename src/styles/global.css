@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores Primarios */
+  --color-primary: #432406;
+  --color-primary-container: #5d3a1a;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #d6a47c;
+  --color-primary-fixed: #ffdcc2;
+  --color-primary-fixed-dim: #f0bc92;
+  --color-inverse-primary: #f0bc92;
+
+  /* Colores Secundarios */
+  --color-secondary: #994700;
+  --color-secondary-container: #fe8e40;
+  --color-on-secondary-container: #692f00;
+  --color-secondary-fixed: #ffdbc8;
+  --color-secondary-fixed-dim: #ffb68a;
+
+  /* Colores Terciarios */
+  --color-tertiary: #0f3300;
+  --color-tertiary-container: #1a4c00;
+  --color-on-tertiary-container: #64c435;
+  --color-tertiary-fixed: #97fb66;
+  --color-tertiary-fixed-dim: #7cdd4d;
+
+  /* Superficies */
+  --color-background: #fef9f2;
+  --color-surface: #fef9f2;
+  --color-surface-container-low: #f8f3ec;
+  --color-surface-container: #f2ede6;
+  --color-surface-container-high: #ece7e1;
+  --color-surface-container-highest: #e6e2db;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-dim: #ded9d3;
+  --color-surface-bright: #fef9f2;
+  --color-surface-variant: #e6e2db;
+  --color-on-surface: #1d1c18;
+  --color-on-surface-variant: #50453c;
+
+  /* Bordes */
+  --color-outline: #82746b;
+  --color-outline-variant: #d4c3b8;
+
+  /* Error */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  /* Tipografía */
+  --font-display: "Libre Caslon Text", serif;
+  --font-body: "Hanken Grotesk", sans-serif;
+
+  /* Spacing */
+  --spacing-gutter: 24px;
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 40px;
+
+  /* Container */
+  --container-max: 1200px;
+
+  /* Border Radius */
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+}
+
+/* Focus visible styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reusable soft shadow for cards */
+.soft-card-shadow {
+  box-shadow: 0 20px 40px -20px rgba(67, 36, 6, 0.08);
+}

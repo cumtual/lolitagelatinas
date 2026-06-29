@@ -1,0 +1,116 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section id="identidad" class="py-16 md:py-24 relative overflow-hidden">
+  <!-- Background decoration blobs -->
+  <div
+    class="absolute top-20 -left-32 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
+  >
+  </div>
+  <div
+    class="absolute bottom-20 -right-32 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"
+  >
+  </div>
+
+  <div
+    class="max-w-[var(--container-max)] mx-auto px-margin-mobile md:px-margin-desktop"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+      <!-- Image Column -->
+      <div class="relative">
+        <Image
+          src="/catedral.png"
+          alt="Catedral de Huajuapan de León, Oaxaca"
+          class="w-full rounded-2xl shadow-2xl object-cover aspect-[3/4]"
+          loading="lazy"
+          width="600"
+          height="800"
+        />
+
+        <!-- Location Card (overlapping) -->
+        <div
+          class="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-auto bg-surface/95 backdrop-blur-sm rounded-xl p-4 shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <span
+              class="material-symbols-outlined text-secondary text-2xl"
+              aria-hidden="true">location_on</span
+            >
+            <div>
+              <p class="font-body font-semibold text-on-surface text-sm">
+                Huajuapan de León
+              </p>
+              <p class="text-on-surface-variant text-xs">Oaxaca, México</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Column -->
+      <div class="flex flex-col gap-6">
+        <h2
+          class="font-display text-primary text-3xl md:text-[32px] leading-10"
+        >
+          Identidad Local
+        </h2>
+
+        <p class="text-on-surface-variant text-lg leading-7">
+          Desde 1974, Gelatinas Lolita ha sido parte de la tradición
+          gastronómica de Huajuapan de León. Nuestros postres artesanales son
+          elaborados con recetas familiares que han pasado de generación en
+          generación.
+        </p>
+
+        <!-- Schedule -->
+        <div class="flex items-center gap-3">
+          <span
+            class="material-symbols-outlined text-secondary"
+            aria-hidden="true">schedule</span
+          >
+          <div>
+            <p class="font-body font-semibold text-on-surface text-sm">
+              Horario de atención
+            </p>
+            <p class="text-on-surface-variant text-sm">
+              Lunes a Sábado: 9:00 AM - 8:00 PM
+            </p>
+            <p class="text-on-surface-variant text-sm">
+              Domingo: 10:00 AM - 3:00 PM
+            </p>
+          </div>
+        </div>
+
+        <!-- Tradition -->
+        <div class="flex items-center gap-3">
+          <span
+            class="material-symbols-outlined text-secondary"
+            aria-hidden="true">history</span
+          >
+          <div>
+            <p class="font-body font-semibold text-on-surface text-sm">
+              Tradición desde 1974
+            </p>
+            <p class="text-on-surface-variant text-sm">
+              Más de 50 años deleitando a la Mixteca
+            </p>
+          </div>
+        </div>
+
+        <!-- Map Button -->
+        <div>
+          <a
+            href="/visitanos"
+            class="inline-flex items-center gap-2 border-2 border-secondary text-secondary px-6 py-3 rounded-full font-body font-semibold text-sm hover:bg-secondary hover:text-on-primary transition-colors"
+            transition:animate="slide"
+          >
+            <span class="material-symbols-outlined text-lg" aria-hidden="true"
+              >map</span
+            >
+            VER EN MAPA
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

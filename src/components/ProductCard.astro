@@ -1,0 +1,35 @@
+---
+interface Props {
+  image: string;
+  name: string;
+  price: string;
+  description: string;
+}
+import { Image } from 'astro:assets';
+
+const { image, name, price, description } = Astro.props;
+---
+
+<a href="/menu" class="group cursor-pointer transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-2 hover:scale-[1.02]" >
+  <!-- Product Image -->
+  <div class="aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-low mb-4">
+    <Image
+      src={image}
+      alt={name}
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      loading="lazy"
+      width="400"
+      height="500"
+    />
+  </div>
+
+  <!-- Name + Price with leader dots -->
+  <div class="flex items-baseline gap-2 mb-2">
+    <h3 class="font-body font-semibold text-on-surface text-base whitespace-nowrap">{name}</h3>
+    <span class="flex-1 border-b border-dotted border-outline-variant"></span>
+    <span class="font-body font-semibold text-secondary text-base whitespace-nowrap">{price}</span>
+  </div>
+
+  <!-- Description -->
+  <p class="text-on-surface-variant text-sm leading-5">{description}</p>
+</a>

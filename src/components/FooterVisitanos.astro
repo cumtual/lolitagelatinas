@@ -1,0 +1,54 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer aria-label="Pie de página" class="bg-surface-container border-t border-outline-variant/20 py-12 md:py-16">
+  <div class="max-w-[var(--container-max)] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-gutter">
+      <!-- Col 1: Logo + Copyright + Redes Sociales -->
+      <div class="flex flex-col gap-4">
+        <img
+          src="/favicon.svg"
+          alt="Gelatinas Lolita"
+          class="h-8 w-8"
+          width="32"
+          height="32"
+        />
+        <p class="text-on-surface-variant text-xs">
+          &copy; {currentYear} Gelatinas Lolita. Desarrollado por <a href="https://cumtual.com" target="_blank" rel="noopener noreferrer" class="hover:text-secondary">Cumtual</a>
+        </p>
+      </div>
+
+      <!-- Col 2: Navegación -->
+      <nav aria-label="Enlaces de navegación del footer">
+        <h3 class="font-body font-semibold text-on-surface text-sm mb-4">Navegación</h3>
+        <ul class="flex flex-col gap-3">
+          <li>
+            <a href="#ubicacion" class="text-on-surface-variant text-sm hover:text-secondary transition-colors">Ubicación</a>
+          </li>
+          <li>
+            <a href="#faq" class="text-on-surface-variant text-sm hover:text-secondary transition-colors">FAQ</a>
+          </li>
+          <li>
+            <a href="#terminos" class="text-on-surface-variant text-sm hover:text-secondary transition-colors">Términos</a>
+          </li>
+          <li>
+            <a href="#privacidad" class="text-on-surface-variant text-sm hover:text-secondary transition-colors">Privacidad</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Col 3: Tradición Viva + Watermark -->
+      <div class="relative flex flex-col gap-3">
+        <h3 class="font-body font-semibold text-on-surface text-sm">Tradición Viva</h3>
+        <p class="text-on-surface-variant text-sm italic leading-relaxed">
+          Desde 1974, llevamos la dulzura de la tradición oaxaqueña a cada hogar. Un legado familiar que endulza generaciones.
+        </p>
+        <span
+          class="material-symbols-outlined absolute bottom-0 right-0 text-6xl text-on-surface/5"
+          aria-hidden="true"
+        >architecture</span>
+      </div>
+    </div>
+  </div>
+</footer>

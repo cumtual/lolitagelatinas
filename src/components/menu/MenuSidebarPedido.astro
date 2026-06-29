@@ -1,0 +1,22 @@
+---
+/**
+ * MenuSidebarPedido.astro
+ * Sidebar estático que invita al usuario a realizar pedidos especiales.
+ * Sin props — todo el contenido es estático.
+ * Requirements: 8.7
+ */
+---
+
+<div class="flex flex-col items-center text-center gap-4 p-8 border border-outline-variant/30 rounded-xl bg-surface-container-lowest">
+  <span class="material-symbols-outlined text-4xl text-secondary" aria-hidden="true">restaurant</span>
+  <h3 class="font-display font-bold text-xl text-primary">¿Pedido Especial?</h3>
+  <p class="text-sm text-on-surface-variant leading-relaxed">
+    ¿Tienes un evento o necesitas cantidades especiales? Preparamos pedidos personalizados para cualquier ocasión.
+  </p>
+  <a
+    href="/visitanos"
+    class="text-secondary underline underline-offset-4 font-semibold hover:text-secondary-container transition-colors"
+  >
+    Contáctanos ahora
+  </a>
+</div>

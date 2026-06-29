@@ -1,0 +1,23 @@
+---
+import { getItemsByCategory } from '../../data/menu';
+import MenuCardFeatured from './MenuCardFeatured.astro';
+import MenuSidebarPedido from './MenuSidebarPedido.astro';
+
+const cremitas = getItemsByCategory("Cremitas");
+---
+
+<section id="cremitas" class="scroll-mt-[100px] mb-16">
+  <!-- Título con línea decorativa -->
+  <div class="flex items-center gap-4">
+    <h2 class="font-display text-2xl font-bold text-primary whitespace-nowrap">Cremitas</h2>
+    <div class="flex-1 h-px bg-outline-variant/30" aria-hidden="true"></div>
+  </div>
+
+  <!-- Grid: Featured (2 cols) + Sidebar (1 col) -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-8">
+    <MenuCardFeatured {...cremitas[0]} badge="Especialidad de la Casa" />
+    <div class="flex items-center">
+      <MenuSidebarPedido />
+    </div>
+  </div>
+</section>

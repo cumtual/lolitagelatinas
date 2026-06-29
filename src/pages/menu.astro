@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MenuHeader from '../components/menu/MenuHeader.astro';
+import MenuFilterPills from '../components/menu/MenuFilterPills.astro';
+import MenuSectionGelatinas from '../components/menu/MenuSectionGelatinas.astro';
+import MenuSectionFlanes from '../components/menu/MenuSectionFlanes.astro';
+import MenuSectionCarlotas from '../components/menu/MenuSectionCarlotas.astro';
+import MenuSectionCremitas from '../components/menu/MenuSectionCremitas.astro';
+import MenuSectionPay from '../components/menu/MenuSectionPay.astro';
+import MenuCulturalMotif from '../components/menu/MenuCulturalMotif.astro';
+---
+
+<Layout
+  title="Menú Completo | Gelatinas Lolita"
+  description="Explora nuestro catálogo completo de gelatinas, flanes, carlotas y cremitas artesanales."
+>
+  <Header />
+  <main class="max-w-[var(--container-max)] mx-auto px-margin-mobile md:px-margin-desktop py-16">
+    <MenuHeader />
+    <MenuFilterPills />
+    <MenuSectionGelatinas />
+    <MenuSectionFlanes />
+    <MenuSectionCarlotas />
+    <MenuSectionCremitas />
+    <MenuSectionPay />
+    <MenuCulturalMotif />
+  </main>
+  <Footer />
+</Layout>

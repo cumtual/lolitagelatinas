@@ -1,0 +1,50 @@
+---
+import ProductCard from './ProductCard.astro';
+
+const products = [
+  {
+    image: "/mosaico.png",
+    name: "Gelatinas Mosaico",
+    price: "$45",
+    description: "Coloridas gelatinas artesanales con diseños únicos que deleitan a grandes y chicos."
+  },
+  {
+    image: "/Cremita.png",
+    name: "Cremita Histórica",
+    price: "$35",
+    description: "Nuestra cremita original, receta familiar transmitida desde 1974."
+  },
+  {
+    image: "/Pay.png",
+    name: "Pay de Queso",
+    price: "$55",
+    description: "Pay artesanal con queso crema y base crujiente, horneado diariamente."
+  }
+];
+---
+
+<section id="postres" class="py-16 md:py-24">
+  <div class="max-w-[var(--container-max)] mx-auto px-margin-mobile md:px-margin-desktop">
+    <!-- Section Header -->
+    <div class="mb-12">
+      <h2 class="font-display text-primary text-3xl md:text-[32px] leading-10 mb-4">
+        Nuestros Postres
+      </h2>
+      <p class="text-on-surface-variant text-lg max-w-lg">
+        Cada postre es preparado con ingredientes frescos y el cariño de una tradición familiar de más de 50 años.
+      </p>
+    </div>
+
+    <!-- Product Grid: 3 cols desktop, 1 col mobile -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      {products.map((product) => (
+        <ProductCard
+          image={product.image}
+          name={product.name}
+          price={product.price}
+          description={product.description}
+        />
+      ))}
+    </div>
+  </div>
+</section>
